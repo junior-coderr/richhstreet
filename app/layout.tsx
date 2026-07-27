@@ -1,57 +1,104 @@
 import type { Metadata, Viewport } from "next";
+import { Alfa_Slab_One, Archivo, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
+import {
+  BUSINESS_NAME,
+  BUSINESS_DESCRIPTION,
+  SITE_URL,
+  PHONE_DISPLAY,
+  ADDRESS,
+  HOURS_DISPLAY,
+  INSTAGRAM_URL,
+} from "@/config/business";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://richhstreetcoffee.com";
+// ---------------------------------------------------------------------------
+// Fonts — self-hosted via next/font (eliminates render-blocking requests)
+// next/font automatically: optimises, subsets, self-hosts, and preloads fonts.
+// ---------------------------------------------------------------------------
+
+const alfaSlabOne = Alfa_Slab_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-alfa-slab",
+  display: "swap",
+});
+
+const archivo = Archivo({
+  weight: ["600", "700"],
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  display: "swap",
+});
+
+// Note: "Source Sans Pro" was renamed "Source Sans 3" on Google Fonts.
+// next/font uses the new name; the CSS variable bridges the gap transparently.
+const sourceSans3 = Source_Sans_3({
+  weight: ["400", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-source-sans",
+  display: "swap",
+});
+
+// ---------------------------------------------------------------------------
+// Viewport — separate export required by Next.js 15
+// ---------------------------------------------------------------------------
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: "#24170f",
 };
 
+// ---------------------------------------------------------------------------
+// Site-wide metadata
+// ---------------------------------------------------------------------------
+
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
+
+  // ── Titles ──────────────────────────────────────────────────────────────
+  applicationName: BUSINESS_NAME,
   title: {
-    default: "Richh Street Coffee | Rooftop Cafe in NIBM, Pune",
-    template: "%s | Richh Street Coffee"
+    default: `${BUSINESS_NAME} | Rooftop Cafe in NIBM, Pune`,
+    template: `%s | ${BUSINESS_NAME}`,
   },
-  description:
-    "Richh Street Coffee is a rooftop cafe in NIBM, Pune, serving coffee, breakfast, shakes, mocktails, and late-night food from 10 AM to 4 AM.",
+
+  // ── Description ──────────────────────────────────────────────────────────
+  description: BUSINESS_DESCRIPTION,
+
+  // ── Keywords ─────────────────────────────────────────────────────────────
   keywords: [
     "Richh Street Coffee",
     "cafe in NIBM Pune",
     "rooftop cafe Pune",
     "late night cafe Pune",
     "coffee shop NIBM",
-    "cafe near Dorabjees Mall"
+    "cafe near Dorabjees Mall",
+    "NIBM Annex cafe",
+    "Mohammadwadi cafe",
+    "cafe open till 4am Pune",
+    "rooftop cafe NIBM Road",
+    "Wi-Fi cafe NIBM Pune",
+    "cafe for work in Pune",
+    "specialty coffee Pune",
+    "mocktail cafe Pune",
+    "breakfast cafe NIBM",
+    "late night food NIBM Pune",
+    "cafe near Undri Pune",
+    "cafe near Kondhwa Pune",
   ],
+
+  // ── Authors & category ───────────────────────────────────────────────────
+  authors: [{ name: BUSINESS_NAME, url: SITE_URL }],
+  category: "restaurant",
+
+  // ── Canonical ────────────────────────────────────────────────────────────
   alternates: {
-    canonical: "/"
+    canonical: SITE_URL,
   },
-  openGraph: {
-    title: "Richh Street Coffee | Rooftop Cafe in NIBM, Pune",
-    description:
-      "Coffee, breakfast, shakes, mocktails, rooftop seating, Wi-Fi, and late-night food in NIBM, Pune.",
-    url: siteUrl,
-    siteName: "Richh Street Coffee",
-    images: [
-      {
-        url: "/images/coffee-line-background.png",
-        width: 1536,
-        height: 864,
-        alt: "Coffee illustrations for Richh Street Coffee"
-      }
-    ],
-    locale: "en_IN",
-    type: "website"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Richh Street Coffee | Rooftop Cafe in NIBM, Pune",
-    description:
-      "A rooftop cafe in NIBM, Pune, open from 10 AM to 4 AM with coffee, food, Wi-Fi, and mocktails.",
-    images: ["/images/coffee-line-background.png"]
-  },
+
+  // ── Robots ───────────────────────────────────────────────────────────────
   robots: {
     index: true,
     follow: true,
@@ -60,26 +107,74 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
-      "max-video-preview": -1
-    }
-  }
+      "max-video-preview": -1,
+    },
+  },
+
+  // ── Icons ────────────────────────────────────────────────────────────────
+  icons: {
+    icon: "/favicon/favicon.ico",
+    shortcut: "/favicon/favicon.ico",
+    // Add when larger PNG favicons are commissioned:
+    // apple: "/favicon/apple-touch-icon.png",
+  },
+
+  // ── Manifest ─────────────────────────────────────────────────────────────
+  manifest: "/manifest.webmanifest",
+
+  // ── OpenGraph ────────────────────────────────────────────────────────────
+  // The actual OG image is generated by app/opengraph-image.tsx automatically.
+  openGraph: {
+    title: `${BUSINESS_NAME} | Rooftop Cafe in NIBM, Pune`,
+    description: `${BUSINESS_NAME} — specialty coffee, rooftop seating, mocktails, and late-night food in NIBM, Pune. ${HOURS_DISPLAY}. Call ${PHONE_DISPLAY}.`,
+    url: SITE_URL,
+    siteName: BUSINESS_NAME,
+    locale: "en_IN",
+    type: "website",
+    countryName: "India",
+  },
+
+  // ── Twitter / X ──────────────────────────────────────────────────────────
+  twitter: {
+    card: "summary_large_image",
+    title: `${BUSINESS_NAME} | Rooftop Cafe in NIBM, Pune`,
+    description: `Rooftop cafe in NIBM, Pune. ${HOURS_DISPLAY}. Specialty coffee, mocktails, breakfast & late-night food. Call ${PHONE_DISPLAY}.`,
+    // Add Twitter/X handle if the business creates one:
+    // site: "@richhstreetcoffee",
+  },
+
+  // ── Verification placeholders ────────────────────────────────────────────
+  // Uncomment and fill in once Search Console is set up:
+  // verification: {
+  //   google: "YOUR_GOOGLE_SITE_VERIFICATION_TOKEN",
+  //   other: { "msvalidate.01": "YOUR_BING_VERIFICATION_TOKEN" },
+  // },
+
+  // ── Additional metadata ──────────────────────────────────────────────────
+  other: {
+    "geo.region": "IN-MH",
+    "geo.placename": ADDRESS.addressLocality,
+    "geo.position": "18.4635;73.8858",
+    ICBM: "18.4635, 73.8858",
+    "instagram:site": INSTAGRAM_URL,
+  },
 };
 
+// ---------------------------------------------------------------------------
+// Root layout
+// ---------------------------------------------------------------------------
+
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-IN">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:wght@600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="en-IN"
+      className={`${alfaSlabOne.variable} ${archivo.variable} ${sourceSans3.variable}`}
+    >
+      {/* No <link> font tags needed — next/font self-hosts and preloads automatically */}
       <body>{children}</body>
     </html>
   );

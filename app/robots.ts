@@ -1,31 +1,68 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://richhstreetcoffee.com";
+import { SITE_URL } from "@/config/business";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      // Default: allow all crawlers
       {
         userAgent: "*",
-        allow: "/"
+        allow: "/",
+        disallow: ["/api/", "/_next/"],
       },
+      // Google — main + AI-extended crawler
       {
         userAgent: "Googlebot",
-        allow: "/"
+        allow: "/",
       },
       {
-        userAgent: "OAI-SearchBot",
-        allow: "/"
+        userAgent: "Google-Extended",
+        allow: "/",
       },
+      // OpenAI / ChatGPT crawlers
       {
         userAgent: "GPTBot",
-        allow: "/"
+        allow: "/",
       },
       {
         userAgent: "ChatGPT-User",
-        allow: "/"
-      }
+        allow: "/",
+      },
+      {
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+      },
+      // Anthropic / Claude
+      {
+        userAgent: "ClaudeBot",
+        allow: "/",
+      },
+      // Perplexity
+      {
+        userAgent: "PerplexityBot",
+        allow: "/",
+      },
+      // Common Crawl (trains many LLMs)
+      {
+        userAgent: "CCBot",
+        allow: "/",
+      },
+      // Amazon Alexa / Bedrock
+      {
+        userAgent: "Amazonbot",
+        allow: "/",
+      },
+      // Apple Intelligence / Siri
+      {
+        userAgent: "Applebot",
+        allow: "/",
+      },
+      // Microsoft Bing
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+      },
     ],
-    sitemap: `${siteUrl}/sitemap.xml`
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

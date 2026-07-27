@@ -30,7 +30,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--foam);
-  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-family: var(--font-source-sans), Arial, sans-serif;
 }
 
 a {
@@ -101,7 +101,7 @@ a {
   gap: 0.8rem;
   width: fit-content;
   color: rgba(50, 36, 29, 0.9);
-  font-family: "Alfa Slab One", Georgia, serif;
+  font-family: var(--font-alfa-slab), Georgia, serif;
   font-size: 1.15rem;
   font-weight: 400;
   letter-spacing: 0;
@@ -122,7 +122,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-weight: 600;
   color: rgba(50, 36, 29, 0.88);
 }
@@ -156,7 +156,7 @@ a {
   background: var(--deep-espresso);
   color: var(--foam);
   text-align: center;
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-weight: 700;
   box-shadow: 0 1rem 3rem var(--shadow);
   transition: transform 180ms ease, background 180ms ease;
@@ -179,7 +179,7 @@ a {
 .eyebrow,
 .section-kicker {
   margin: 0 0 1.2rem;
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-weight: 700;
   color: var(--terracotta);
   letter-spacing: 0.01em;
@@ -193,7 +193,7 @@ a {
 .hero h1 {
   max-width: 39rem;
   margin: 0;
-  font-family: "Alfa Slab One", Georgia, serif;
+  font-family: var(--font-alfa-slab), Georgia, serif;
   font-size: 5.4rem;
   line-height: 0.98;
   font-weight: 400;
@@ -226,7 +226,7 @@ a {
   padding: 0.95rem 1.5rem;
   border: 1px solid transparent;
   border-radius: 0.6rem;
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-weight: 700;
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
@@ -276,7 +276,7 @@ a {
 .hero-hours {
   margin: 1.15rem 0 0;
   color: rgba(50, 36, 29, 0.76);
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -338,7 +338,7 @@ a {
   align-items: center;
   gap: 0.8rem;
   color: rgba(50, 36, 29, 0.7);
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -372,7 +372,7 @@ a {
 
 .hero-facts dt {
   margin: 0 0 0.25rem;
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-weight: 700;
 }
 
@@ -412,7 +412,7 @@ a {
 
 h2 {
   margin: 0;
-  font-family: "Alfa Slab One", Georgia, serif;
+  font-family: var(--font-alfa-slab), Georgia, serif;
   font-size: 3.25rem;
   line-height: 1.08;
   font-weight: 400;
@@ -449,7 +449,7 @@ h2 {
   min-height: 4.6rem;
   padding: 0 2.4rem;
   border-right: 1px solid rgba(242, 217, 189, 0.2);
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -486,7 +486,7 @@ h2 {
 
 .menu-group h3 {
   margin: 0 0 1.4rem;
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-size: 1.1rem;
   color: var(--deep-espresso);
 }
@@ -522,7 +522,7 @@ h2 {
 .menu-group li span:last-child {
   order: 3;
   color: var(--espresso);
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -531,7 +531,7 @@ h2 {
   display: inline-flex;
   margin-top: 2.6rem;
   color: var(--terracotta);
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-weight: 700;
   border-bottom: 1px solid currentColor;
 }
@@ -576,7 +576,7 @@ summary {
   cursor: pointer;
   padding: 1.25rem 0;
   color: var(--deep-espresso);
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-size: 1.12rem;
   font-weight: 700;
   display: flex;
@@ -640,7 +640,7 @@ details p {
 
 .visit-details span:first-child {
   color: var(--foam);
-  font-family: Archivo, Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
 }

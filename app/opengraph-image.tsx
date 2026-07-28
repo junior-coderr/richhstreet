@@ -24,9 +24,9 @@ export default async function Image() {
           flexDirection: "column",
           position: "relative",
           overflow: "hidden",
-          // Brand gradient — espresso tones from globals.css
+          // Brand gradient — logo red #7a0002 transitioning to end teal #35888c
           background:
-            "linear-gradient(135deg, #24170f 0%, #4b382f 55%, #966253 100%)",
+            "linear-gradient(135deg, #7a0002 0%, #520001 45%, #35888c 100%)",
         }}
       >
         {/* Decorative warm glow in top-right */}
@@ -39,7 +39,7 @@ export default async function Image() {
             height: "500px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(150,98,83,0.45) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(242,217,189,0.3) 0%, transparent 70%)",
             display: "flex",
           }}
         />
@@ -57,13 +57,13 @@ export default async function Image() {
             style={{
               width: "32px",
               height: "2px",
-              background: "#966253",
+              background: "#35888c",
               display: "flex",
             }}
           />
           <span
             style={{
-              color: "#f2d9bd",
+              color: "#efeced",
               fontSize: "18px",
               fontWeight: 700,
               letterSpacing: "0.12em",
@@ -87,7 +87,7 @@ export default async function Image() {
           {/* Business name */}
           <div
             style={{
-              color: "#fff5e6",
+              color: "#efeced",
               fontSize: "80px",
               fontWeight: 900,
               lineHeight: 1.0,
@@ -101,7 +101,7 @@ export default async function Image() {
           {/* Tagline */}
           <div
             style={{
-              color: "#f2d9bd",
+              color: "#efeced",
               fontSize: "30px",
               lineHeight: 1.4,
               marginBottom: "36px",
@@ -123,9 +123,9 @@ export default async function Image() {
                 key={tag}
                 style={{
                   padding: "10px 20px",
-                  border: "1px solid rgba(242,217,189,0.35)",
+                  border: "1px solid rgba(239,236,237,0.35)",
                   borderRadius: "999px",
-                  color: "#f2d9bd",
+                  color: "#efeced",
                   fontSize: "16px",
                   fontWeight: 600,
                   display: "flex",
@@ -149,7 +149,7 @@ export default async function Image() {
         >
           <span
             style={{
-              color: "rgba(242,217,189,0.6)",
+              color: "rgba(239,236,237,0.7)",
               fontSize: "18px",
               letterSpacing: "0.04em",
             }}
@@ -172,7 +172,7 @@ export default async function Image() {
                 display: "flex",
               }}
             />
-            <span style={{ color: "#f2d9bd", fontSize: "16px" }}>
+            <span style={{ color: "#efeced", fontSize: "16px" }}>
               Open now · till 4 AM
             </span>
           </div>

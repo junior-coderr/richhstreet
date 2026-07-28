@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Alfa_Slab_One, Archivo, Source_Sans_3 } from "next/font/google";
+import { Alfa_Slab_One, Archivo, Source_Sans_3, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import {
   BUSINESS_NAME,
@@ -23,8 +23,15 @@ const alfaSlabOne = Alfa_Slab_One({
   display: "swap",
 });
 
+const playfair = Playfair_Display({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
 const archivo = Archivo({
-  weight: ["600", "700"],
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-archivo",
   display: "swap",
@@ -47,7 +54,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#24170f",
+  themeColor: "#7a0002",
 };
 
 // ---------------------------------------------------------------------------
@@ -172,7 +179,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-IN"
-      className={`${alfaSlabOne.variable} ${archivo.variable} ${sourceSans3.variable}`}
+      className={`${alfaSlabOne.variable} ${playfair.variable} ${archivo.variable} ${sourceSans3.variable}`}
     >
       {/* No <link> font tags needed — next/font self-hosts and preloads automatically */}
       <body>{children}</body>

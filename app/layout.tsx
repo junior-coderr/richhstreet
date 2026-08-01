@@ -94,6 +94,20 @@ export const metadata: Metadata = {
     "late night food NIBM Pune",
     "cafe near Undri Pune",
     "cafe near Kondhwa Pune",
+    "best cafe in Pune",
+    "aesthetic cafe Pune",
+    "instagrammable cafe NIBM",
+    "romantic cafe Pune",
+    "late night hangout Pune",
+    "premium coffee shop Pune",
+    "late night cafe in Pune",
+    "musafir",
+    "musafir cafe in pune",
+    "starbuks",
+    "starbuks near me",
+    "blue tokia coffee",
+    "cafe",
+    "third wave coffee",
   ],
 
   // ── Authors & category ───────────────────────────────────────────────────
@@ -116,14 +130,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
       "max-video-preview": -1,
     },
-  },
-
-  // ── Icons ────────────────────────────────────────────────────────────────
-  icons: {
-    icon: "/favicon/favicon.ico",
-    shortcut: "/favicon/favicon.ico",
-    // Add when larger PNG favicons are commissioned:
-    // apple: "/favicon/apple-touch-icon.png",
   },
 
   // ── Manifest ─────────────────────────────────────────────────────────────

@@ -147,6 +147,23 @@ export const metadata: Metadata = {
     countryName: "India",
   },
 
+  // ── Icons ────────────────────────────────────────────────────────────────
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/apple-icon.png",
+      },
+    ],
+  },
+
   // ── Twitter / X ──────────────────────────────────────────────────────────
   twitter: {
     card: "summary_large_image",
